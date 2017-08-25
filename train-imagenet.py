@@ -5,6 +5,7 @@ import time
 import cv2
 import keras
 import numpy as np
+from collections import OrderedDict
 from keras.callbacks import Callback
 from keras.preprocessing.image import ImageDataGenerator
 
@@ -122,4 +123,6 @@ callbacks = [
 model.fit_generator(
         train_gen, steps_per_epoch=1281167 // 64,
         epochs=90,
-        callbacks=callbacks)
+        callbacks=callbacks,
+        workers=10,
+        max_queue_size=100)
