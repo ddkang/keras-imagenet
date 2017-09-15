@@ -5,7 +5,7 @@ import time
 import cv2
 import keras
 import numpy as np
-from collections import OrderedDict
+from collections import OrderedDict, Iterable
 from keras.callbacks import Callback
 from keras.preprocessing.image import ImageDataGenerator
 
